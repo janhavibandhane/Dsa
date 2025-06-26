@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.phpjanu": "php",
+        "iostream": "cpp"
+    }
+}
