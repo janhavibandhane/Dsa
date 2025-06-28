@@ -107,34 +107,64 @@
 // }
 
 
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
-void SelectionSort(int arr[],int n){
+// void SelectionSort(int arr[],int n){
    
-  for(int i=0;i<n-1;i++){
-     int smallestIndex=i; //---assuming 1st index is smallest 
-    for(int j=i+1;j<n;j++){
-        if(arr[j]<arr[smallestIndex]){
-            smallestIndex=j; // changing value of smallestIndex because we find next smallestIndex
-        }
-    }
-    swap(arr[i],arr[smallestIndex]);
-  }
+//   for(int i=0;i<n-1;i++){
+//      int smallestIndex=i; //---assuming 1st index is smallest 
+//     for(int j=i+1;j<n;j++){
+//         if(arr[j]<arr[smallestIndex]){
+//             smallestIndex=j; // changing value of smallestIndex because we find next smallestIndex
+//         }
+//     }
+//     swap(arr[i],arr[smallestIndex]);
+//   }
   
-}
+// }
 
-int main(){
-    int n=5;
-    int arr[]={4,2,1,3,5};
+// int main(){
+//     int n=5;
+//     int arr[]={4,2,1,3,5};
 
-    SelectionSort(arr,n);
+//     SelectionSort(arr,n);
     
-    // lets run it
-    for(int i=0;i<n;i++){
-        cout<<arr[i];
-    }
-}
+//     // lets run it
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i];
+//     }
+// }
+
+
+//3.INSERTION SORTING
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// void insertionSort(int arr[],int n){
+//     for(int i=1;i<n;i++){
+//         int curr=arr[i]; //index 1
+//         int prev=i-1;  //index 0
+        
+//         while (prev>=0 && arr[prev]>curr)
+//         {
+//            arr[prev+1]=arr[prev];
+//            prev--;
+//         }
+//         arr[prev+1]=curr;
+        
+//     }
+
+// }
+// int main(){
+//   int n=5;
+//   int arr[]={4,1,5,2,3};
+//   insertionSort(arr,n);
+//   for(int i=0;i<n;i++){
+//     cout<<arr[i];
+//   }
+// }
+
 
 //solved questions
 // Bubble Sort
