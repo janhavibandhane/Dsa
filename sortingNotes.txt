@@ -1,0 +1,199 @@
+
+Selection sort
+find minimum in array & swap
+13,46,24,52,20,9
+Step1:-9,46,24,52,20,13
+Step2:-9,13,24,52,20,46
+Step3:-9,13,20,52,24,46
+Step4:-9,13,20,24,52,,46
+Step5:-9,13,20,24,46,52
+
+//n-2 means till 20 loop will run
+
+for( int i=0;i<=n-2;i++){
+
+  mini=i; //consider 1st elem is minimum
+
+  for(int j=i; j<=n-1;i++){ //1st this will run for enitire array //2nd –from 1 to 5th index //3rd 2 to 5th and soo on
+
+  if(arr[j]<arr[mini]){
+
+   mini=j
+
+}
+swap(arr[i],arr[mini])
+}
+}
+Time Complexity:-
+
+1st will run n time
+
+2nd loop is running n-1 ,n-2,n-3 and so on
+
+ n+ n-1+n-2 +n-3 …
+
+n*(n-1)/2 → n^2-n/2 —> we ignore constant n^2/2 -n/2 so ignore n/2 and 2
+
+So time complexity is O(n^2)
+
+
+
+Insertion sort
+Take element and place in correct position
+14 9 15 12 6 8 13
+1st 2 elements - 9 14 15 12 6 8 13
+2nd 3 elements - 9 14 15 12 6 8 13
+3rd 4 elements - 9 12 14 15 6 8 13 → in this step 1st we swap (15,12) then (14,12)
+4th 5 elements - 6 9 12 14 15 8 13 → in this step 1st we swap (15,6) then (14,6) then (12,6)then (9,6)
+5th 6 elements - 6 8 9 12 14 15 13 →
+6th 6 elements - 6 8 9 12 13 14 15 →
+
+
+
+void insertionSort(int a[], int n) {
+
+  for (int i = 0; i < n; i++) {
+
+    int j = i;
+
+    // Move a[j] to its correct position in the sorted part of the array
+
+    while (j > 0 && a[j - 1] > a[j]) {
+
+      // Swap if the previous element is greater
+
+      swap(a[j - 1], a[j]);
+
+      j--; // Move left
+
+    }
+
+  }
+
+}
+
+ i = 0:
+
+j = 0
+
+
+
+No inner while loop runs because j == 0.
+
+
+
+Array stays the same.
+text
+Copy
+Edit
+
+Array: 5 2 4 6 1 3
+🔁 i = 1:
+j = 1
+
+a[0] = 5 > a[1] = 2 → swap
+
+After swap: a = [2, 5, 4, 6, 1, 3]
+
+j-- → j = 0 → loop ends
+
+
+
+text
+
+Copy
+
+Edit
+
+Array: 2 5 4 6 1 3
+
+🔁 i = 2:
+
+j = 2
+
+
+
+a[1] = 5 > a[2] = 4 → swap → [2, 4, 5, 6, 1, 3]
+
+
+
+j = 1
+
+
+
+a[0] = 2 < a[1] = 4 → done
+
+
+
+text
+
+Copy
+
+Edit
+
+Array: 2 4 5 6 1 3
+
+🔁 i = 3:
+
+j = 3
+
+
+
+a[2] = 5 < a[3] = 6 → no swap → already in correct position
+
+
+
+text
+
+Copy
+
+Edit
+
+Array: 2 4 5 6 1 3
+
+🔁 i = 4:
+
+j = 4
+
+
+
+a[3] = 6 > a[4] = 1 → swap → [2, 4, 5, 1, 6, 3]
+
+
+
+j = 3: a[2] = 5 > a[3] = 1 → swap → [2, 4, 1, 5, 6, 3]
+
+
+
+j = 2: a[1] = 4 > a[2] = 1 → swap → [2, 1, 4, 5, 6, 3]
+
+
+
+j = 1: a[0] = 2 > a[1] = 1 → swap → [1, 2, 4, 5, 6, 3]
+
+
+
+j = 0 → loop ends
+
+
+
+text
+
+Copy
+
+Edit
+
+Array: 1 2 4 5 6 3
+
+🔁 i = 5:
+j = 5
+
+a[4] = 6 > a[5] = 3 → swap → [1, 2, 4, 5, 3, 6]
+j = 4: a[3] = 5 > a[4] = 3 → swap → [1, 2, 4, 3, 5, 6]
+j = 3: a[2] = 4 > a[3] = 3 → swap → [1, 2, 3, 4, 5, 6]
+j = 2: a[1] = 2 < a[2] = 3 → done
+
+text
+Copy
+Edit
+Array: 1 2 3 4 5 6
