@@ -1,12 +1,22 @@
 //MERAGE SORT
-// pseudo code
+
+//HOW IT WORK
+//  [1,3,4,5,2,6,7]
+//          |
+//  [1,3,4,5] [2,6,7]
+//          |
+//  [1,3] [4,5] [2,6] [7]
+//          |
+//  [1] [3] [4] [5] [2] [6] [7] --->through backtracking it will sort              
+
+// PSEUDO CODE
 // 1ST PART OF MEARGE SORT
 // void meargeSort(arr[],str,end){
 // if(str<end){  //base case
 //    int mid=str+end/2
 //    meargeSort(arr,str,mid) //for left part
 //    meargeSort(arr,mid,end) //for Right part
-//   mearge(arr,str,end,mid);
+//    mearge(arr,str,end,mid);
 // }
 // }
 
@@ -17,7 +27,7 @@
 // in which we comapre 2 array ad combine them 
 // [1,3,4,5] [2,6,7]
 
-// pseudo code
+// PSEUDO CODE
 // void mearge(arr,str,end,mid){
 // vector<int> temp;
 // int i=str;
@@ -39,7 +49,7 @@
 
 
 
-// code:-
+// CODE:-
 
 #include <iostream>
 
@@ -133,4 +143,6 @@ int main() {
 
 }
 
+
+//TIME COMPLEXITY
 
