@@ -145,4 +145,5 @@ int main() {
 
 
 //TIME COMPLEXITY
-
+// TC=0(log*n)
+// SC=0(n) -->bacuse of vector array we are storing that 
