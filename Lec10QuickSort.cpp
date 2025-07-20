@@ -53,7 +53,7 @@ int partition(vector<int> &arr,int st,int end){
         swap(arr[j],arr[index]);
     }
    }
-  // giving correct position to privet
+  // giving correct position to privet  
    index++;
    swap(arr[index],arr[end]);
    return index;

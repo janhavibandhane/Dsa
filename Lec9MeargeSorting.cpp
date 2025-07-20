@@ -52,95 +52,54 @@
 // CODE:-
 
 #include <iostream>
-
 #include <vector>
-
 using namespace std;
 
 void mearge(vector<int> &arr, int str, int end, int mid) {
-
   vector<int> temp;
-
   int i = str; //start index of left array
-
   int j = mid + 1; //start index of right array
-
   while (i <= mid && j <= end) {
-
     if (arr[i] < arr[j]) {
-
       temp.push_back(arr[i]);
-
       i++;
-
     } else {
-
       temp.push_back(arr[j]);
-
       j++;
-
     }
-
   }
 
 //why we didi that after one half finsihed other still need to push theire element in temp array 
-
   while (i <= mid) {
-
     temp.push_back(arr[i]);
-
     i++;
-
   }
-
   while (j <= end) {
-
     temp.push_back(arr[j]);
-
     j++;
-
   }
-
   for (int idx = 0; idx < temp.size(); idx++) {
-
     arr[idx + str] = temp[idx];
-
   }
-
 }
 
 void meargeSort(vector<int> &arr, int str, int end) {
-
   if (str < end) {
-
     int mid = (str + end) / 2; // FIXED
-
     meargeSort(arr, str, mid);
-
     meargeSort(arr, mid + 1, end);
-
     mearge(arr, str, end, mid);
-
   }
-
 }
 
 int main() {
-
   vector<int> arr = {12, 31, 35, 8, 32, 17};
-
   meargeSort(arr, 0, arr.size() - 1);
-
   for (int val : arr) {
-
     cout << val << " ";
-
   }
-
   cout << endl;
-
   return 0;
-
 }
 
 
